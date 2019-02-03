@@ -1091,11 +1091,41 @@ public class Inicio extends javax.swing.JPanel {
 //            txtValFin.setText(""+resp);
 //            
 //      
-        ArrayList<String[]> temp = Utils.getDataFromCsv("dif_formulacion_realidad",true);
+        ArrayList<String[]> temp = Utils.getDataFromCsv("resultados_mezclas",true);
+        
+        txtViscoCin.setText(temp.get(9)[0]);
+        txtViscoDin.setText(temp.get(0)[0]);
+        txtColor.setText(temp.get(3)[0]);
+        txtVola.setText(temp.get(6)[0]);
+        txtViscoCin1.setText(temp.get(10)[0]);
+        txtViscoDin1.setText(temp.get(1)[0]);
+        txtColor1.setText(temp.get(4)[0]);
+        txtVola1.setText(temp.get(7)[0]);
+        txtViscoCin2.setText(temp.get(11)[0]);
+        txtViscoDin2.setText(temp.get(2)[0]);
+        txtColor2.setText(temp.get(5)[0]);
+        txtVola2.setText(temp.get(8)[0]);
+
+        temp = Utils.getDataFromCsv("dif_formulacion_realidad",true);
         
         for(int i=0;i<4;i++){
             dif1x2[i].setText(temp.get(0)[i]);
         }
+        
+        temp = Utils.getDataFromCsv("basicos_optimizados",true);
+        
+        txtNomBa1.setText(temp.get(0)[0]);
+        txBa1.setText(temp.get(2)[0]);
+        txtFracMa1.setText(temp.get(4)[0]);
+        txCUBa1.setText(temp.get(6)[0]);
+        txCanBa1.setText(temp.get(8)[0]);
+        txCpBa1.setText(temp.get(10)[0]);
+        txtNomBa2.setText(temp.get(1)[0]);
+        txBa2.setText(temp.get(3)[0]);
+        txtFracMa2.setText(temp.get(5)[0]);
+        txCUBa2.setText(temp.get(7)[0]);
+        txCanBa2.setText(temp.get(9)[0]);
+        txCpBa2.setText(temp.get(11)[0]);
         
         }
         catch(Exception e){

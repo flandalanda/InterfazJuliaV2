@@ -574,7 +574,7 @@ else
     #answer = DataFrame( nombre = nombres_basicos, codigo = new_code, fraccion_masa = fraccion, costo_unitario_mxn_kg = new_cost, cantidad_kg = new_basics, costo_por_basico = total_cost)
     an = [nombres_basicos[1], nombres_basicos[2], new_code[1], new_code[2], fraccion[1], fraccion[2], new_cost[1], new_cost[2], new_basics[1], new_basics[2], total_cost[1], total_cost[2]]
     answ = [an]
-    answer = DataFrame(informacion = answ)
+    answer = DataFrame(informacion = an)
 
     #comparamos las fracciones que estan en la hoja de formulaciones con aquellas calculadas con el algoritmo 
     diff_x1x2 = DataFrame(x1_formula = product[6], x1_prog = x1, x2_formula = product[9], x2_prog = x2)
@@ -583,7 +583,7 @@ else
     
     p_info = [m_prod, vdyn_no_opt , product[12] , c_prod , color_no_opt , product[13] , v_prod , volat_no_opt , product[14] , mukin_product , mukin_product , mukin_product] 
     pp_info = [p_info]
-    product_info = DataFrame(informacion = pp_info) 
+    product_info = DataFrame(informacion = p_info) 
     
     #guardamos los resultados en un archivo CSV
 
