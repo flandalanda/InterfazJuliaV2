@@ -1,0 +1,2 @@
+viscosidad_kin,viscosidad_dyn,color,volatilidad
+7.7,20860.54065658743,0,10.010649363427428

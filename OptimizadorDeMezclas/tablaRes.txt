@@ -1,0 +1,3 @@
+nombre,codigo,costo_unitario_mxn_kg,cantidad_kg,costo_por_basico
+STAR 12,3022,6,4.0,24.0
+YUBASE 4,4831,7,6.0,42.0
