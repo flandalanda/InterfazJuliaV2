@@ -638,7 +638,7 @@ public class Inicio extends javax.swing.JPanel {
         jTextArea3.setDisabledTextColor(new java.awt.Color(36, 47, 65));
         jScrollPane3.setViewportView(jTextArea3);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 670, 150, 70));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 670, 170, 70));
 
         jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 400, 10, 80));
@@ -1125,6 +1125,24 @@ public class Inicio extends javax.swing.JPanel {
         temp = Utils.getDataFromCsv("dif_cost_optimizado",true);
         
         txtValFin.setText(temp.get(0)[0]);
+        
+        temp = Utils.getDataFromCsv("producto", true);
+        
+        txtCodProd.setText(temp.get(2)[0]);
+        txLinea.setText(temp.get(0)[0]);
+        txGrado.setText(temp.get(1)[0]);
+        txB1n.setText(temp.get(4)[0]);
+        txB1c.setText(temp.get(3)[0]);
+        txB2n.setText(temp.get(7)[0]);
+        txB2c.setText(temp.get(6)[0]);
+        txB1x.setText(temp.get(5)[0]);
+        txB2x.setText(temp.get(8)[0]);
+        txTemp.setText(temp.get(10)[0]);
+        txVol.setText(temp.get(13)[0]);
+        txCst.setText(temp.get(9)[0]);
+        txColor.setText(temp.get(12)[0]);
+        txCp.setText(temp.get(11)[0]);
+        txCpM1.setText(temp.get(14)[0]);
         
         ArrayList<String>itemsCombo = Utils.generaCol("basicos_intercambiables", 1);
         Collections.sort(itemsCombo);
