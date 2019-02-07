@@ -167,7 +167,6 @@ public class Inicio extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        txtInfoBas = new javax.swing.JLabel();
         txBa1 = new javax.swing.JLabel();
         txBa2 = new javax.swing.JLabel();
         txCUBa1 = new javax.swing.JLabel();
@@ -258,6 +257,11 @@ public class Inicio extends javax.swing.JPanel {
         jSeparator30 = new javax.swing.JSeparator();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTextArea11 = new javax.swing.JTextArea();
+        jSeparator35 = new javax.swing.JSeparator();
+        combo1 = new javax.swing.JComboBox<>();
+        txtInfoBas3 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea12 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setForeground(new java.awt.Color(36, 47, 65));
@@ -288,7 +292,7 @@ public class Inicio extends javax.swing.JPanel {
                 comboKeyPressed(evt);
             }
         });
-        jPanel1.add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        jPanel1.add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         txAviso.setText("Calculando...");
         txAviso.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -480,11 +484,6 @@ public class Inicio extends javax.swing.JPanel {
         jLabel13.setText("Cantidad (kg)");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 70, -1, -1));
 
-        txtInfoBas.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        txtInfoBas.setForeground(new java.awt.Color(204, 204, 204));
-        txtInfoBas.setText("Información de producto");
-        add(txtInfoBas, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 370, -1, -1));
-
         txBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txBa1.setForeground(new java.awt.Color(204, 204, 204));
         txBa1.setText("bla bla");
@@ -589,7 +588,7 @@ public class Inicio extends javax.swing.JPanel {
         txtValFin.setFont(new java.awt.Font("Century Gothic", 2, 24)); // NOI18N
         txtValFin.setForeground(new java.awt.Color(204, 204, 204));
         txtValFin.setText("bla bla");
-        add(txtValFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, -1, -1));
+        add(txtValFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
@@ -599,7 +598,7 @@ public class Inicio extends javax.swing.JPanel {
         txCostMez1.setFont(new java.awt.Font("Century Gothic", 2, 24)); // NOI18N
         txCostMez1.setForeground(new java.awt.Color(204, 204, 204));
         txCostMez1.setText("bla bla");
-        add(txCostMez1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
+        add(txCostMez1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
 
         jScrollPane4.setBorder(null);
         jScrollPane4.setForeground(new java.awt.Color(204, 204, 204));
@@ -633,13 +632,13 @@ public class Inicio extends javax.swing.JPanel {
         jTextArea3.setForeground(new java.awt.Color(204, 204, 204));
         jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
-        jTextArea3.setText(" Viscosidad\n  dinámica \n       (cP)");
+        jTextArea3.setText("Básicos Intercambiables");
         jTextArea3.setWrapStyleWord(true);
         jTextArea3.setCaretColor(new java.awt.Color(36, 47, 65));
         jTextArea3.setDisabledTextColor(new java.awt.Color(36, 47, 65));
         jScrollPane3.setViewportView(jTextArea3);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 130, 70));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 670, 150, 70));
 
         jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 400, 10, 80));
@@ -738,7 +737,7 @@ public class Inicio extends javax.swing.JPanel {
         add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 10, 80));
 
         jSeparator25.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 400, 10, 80));
+        add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 650, 10, 330));
 
         txtViscoCin.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin.setForeground(new java.awt.Color(204, 204, 204));
@@ -748,17 +747,17 @@ public class Inicio extends javax.swing.JPanel {
         txtViscoDin.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin.setForeground(new java.awt.Color(204, 204, 204));
         txtViscoDin.setText("bla bla");
-        add(txtViscoDin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 510, -1, -1));
+        add(txtViscoDin, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, -1, -1));
 
         txtColor.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor.setForeground(new java.awt.Color(204, 204, 204));
         txtColor.setText("bla bla");
-        add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 510, -1, -1));
+        add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 510, -1, -1));
 
         txtVola.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola.setForeground(new java.awt.Color(204, 204, 204));
         txtVola.setText("bla bla");
-        add(txtVola, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 510, -1, -1));
+        add(txtVola, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 510, -1, -1));
 
         txtViscoCin1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin1.setForeground(new java.awt.Color(204, 204, 204));
@@ -768,17 +767,17 @@ public class Inicio extends javax.swing.JPanel {
         txtViscoDin1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin1.setForeground(new java.awt.Color(204, 204, 204));
         txtViscoDin1.setText("bla bla");
-        add(txtViscoDin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 550, -1, -1));
+        add(txtViscoDin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 550, -1, -1));
 
         txtColor1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor1.setForeground(new java.awt.Color(204, 204, 204));
         txtColor1.setText("bla bla");
-        add(txtColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 550, -1, -1));
+        add(txtColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 550, -1, -1));
 
         txtVola1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola1.setForeground(new java.awt.Color(204, 204, 204));
         txtVola1.setText("bla bla");
-        add(txtVola1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 550, -1, -1));
+        add(txtVola1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 550, -1, -1));
 
         txtViscoCin2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin2.setForeground(new java.awt.Color(204, 204, 204));
@@ -788,17 +787,17 @@ public class Inicio extends javax.swing.JPanel {
         txtViscoDin2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin2.setForeground(new java.awt.Color(204, 204, 204));
         txtViscoDin2.setText("bla bla");
-        add(txtViscoDin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 590, -1, -1));
+        add(txtViscoDin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 590, -1, -1));
 
         txtColor2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor2.setForeground(new java.awt.Color(204, 204, 204));
         txtColor2.setText("bla bla");
-        add(txtColor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 590, -1, -1));
+        add(txtColor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 590, -1, -1));
 
         txtVola2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola2.setForeground(new java.awt.Color(204, 204, 204));
         txtVola2.setText("bla bla");
-        add(txtVola2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 590, -1, -1));
+        add(txtVola2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 590, -1, -1));
 
         jSeparator26.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, 10, 80));
@@ -872,7 +871,7 @@ public class Inicio extends javax.swing.JPanel {
         jScrollPane8.setViewportView(jTextArea8);
 
         add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 260, 130, 30));
-        add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 110, 10));
+        add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, 220, 10));
         add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 250, 760, 10));
 
         jSeparator29.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -970,6 +969,38 @@ public class Inicio extends javax.swing.JPanel {
         jScrollPane11.setViewportView(jTextArea11);
 
         add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 260, 110, 30));
+
+        jSeparator35.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 400, 10, 80));
+
+        combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combo1.setName(""); // NOI18N
+        add(combo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 760, -1, -1));
+
+        txtInfoBas3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        txtInfoBas3.setForeground(new java.awt.Color(204, 204, 204));
+        txtInfoBas3.setText("Información de producto");
+        add(txtInfoBas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 370, -1, -1));
+
+        jScrollPane12.setBorder(null);
+        jScrollPane12.setForeground(new java.awt.Color(204, 204, 204));
+        jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane12.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        jTextArea12.setEditable(false);
+        jTextArea12.setBackground(new java.awt.Color(36, 47, 65));
+        jTextArea12.setColumns(20);
+        jTextArea12.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jTextArea12.setForeground(new java.awt.Color(204, 204, 204));
+        jTextArea12.setLineWrap(true);
+        jTextArea12.setRows(5);
+        jTextArea12.setText(" Viscosidad\n  dinámica \n       (cP)");
+        jTextArea12.setWrapStyleWord(true);
+        jTextArea12.setCaretColor(new java.awt.Color(36, 47, 65));
+        jTextArea12.setDisabledTextColor(new java.awt.Color(36, 47, 65));
+        jScrollPane12.setViewportView(jTextArea12);
+
+        add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 130, 70));
     }// </editor-fold>//GEN-END:initComponents
     static String readFile(String path, Charset encoding) throws IOException 
     {
@@ -1035,62 +1066,18 @@ public class Inicio extends javax.swing.JPanel {
         // TODO add your handling code here:
         System.out.println(combo.getSelectedItem());
         try{ 
-//            Runtime rt = Runtime.getRuntime();
-//            System.out.println(path);
-//            Process pr = rt.exec("julia mezclas.jl "+combo.getSelectedItem() + " " +txtDemanda.getText());
-//                
-//               InputStream is = pr.getInputStream();
-//               String line;
-//               BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-//               
-//               while((line = reader.readLine()) != null){
-//                   System.out.print(line);
-//               }
-//
-//
-//
-//            cargaEstado();
-//            if(estado != null){
-//                txtCodProd.setText(estado[2]);
-//                txLinea.setText(estado[0]);
-//                txB1n.setText(estado[3]);
-//                txB1c.setText(estado[4]);
-//                txB1x.setText(estado[5]);
-//                txCst.setText(estado[9]);
-//                txTemp.setText(estado[10]);
-//                txCp.setText(estado[11]);   
-//                txGrado.setText(estado[1]);
-//                txB2n.setText(estado[6]);
-//                txB2c.setText(estado[7]);
-//                txB2x.setText(estado[8]);
-//                txColor.setText(estado[12]);
-//                txVol.setText(estado[13]);
-//                txCpM1.setText(estado[14]);
-//
-//            }
-//            
-//            ArrayList<String> valsTab = Utils.generaDataCsv("tablaRes.txt");
-//   
-//            
-//            for(int i = 0;i<infBas.length;i++){
-//                infBas[i].setText(valsTab.get(i));
-//                i++;
-//            }
-//            
-//            
-//            String[] vals = Utils.leeValRes("valoresRes.txt");
-//            
-//            
-//            txCostMez1.setText(vals[0].substring(1, vals[1].length()-1));
-//            txCostMez2.setText(vals[1]);
-//            
-//            double x1 = Double.parseDouble(vals[0].substring(1, vals[1].length()-1));
-//            double x2 = Double.parseDouble(vals[1]);
-//            double resp = x1-x2;
-//            
-//            txtValFin.setText(""+resp);
-//            
-//      
+            Runtime rt = Runtime.getRuntime();
+            System.out.println(path);
+            Process pr = rt.exec("julia mezclas.jl "+combo.getSelectedItem() + " " +txtDemanda.getText());
+                
+               InputStream is = pr.getInputStream();
+               String line;
+               BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+               
+               while((line = reader.readLine()) != null){
+                   System.out.print(line);
+               }
+      
         ArrayList<String[]> temp = Utils.getDataFromCsv("resultados_mezclas",true);
         
         txtViscoCin.setText(temp.get(9)[0]);
@@ -1127,6 +1114,26 @@ public class Inicio extends javax.swing.JPanel {
         txCanBa2.setText(temp.get(9)[0]);
         txCpBa2.setText(temp.get(11)[0]);
         
+        temp = Utils.getDataFromCsv("costo_sin_optimizar",true);
+        
+        txCostMez1.setText(temp.get(0)[0]);
+        
+        temp = Utils.getDataFromCsv("costo_optimizado",true);
+        
+        txCostMez2.setText(temp.get(0)[0]);
+        
+        temp = Utils.getDataFromCsv("dif_cost_optimizado",true);
+        
+        txtValFin.setText(temp.get(0)[0]);
+        
+        ArrayList<String>itemsCombo = Utils.generaCol("basicos_intercambiables", 1);
+        Collections.sort(itemsCombo);
+        
+        combo1.removeAllItems();
+        
+        for(String s : itemsCombo)
+            combo1.addItem(s);
+        
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -1138,6 +1145,7 @@ public class Inicio extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcula;
     private javax.swing.JComboBox<String> combo;
+    private javax.swing.JComboBox<String> combo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -1166,6 +1174,7 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1201,6 +1210,7 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator32;
     private javax.swing.JSeparator jSeparator33;
     private javax.swing.JSeparator jSeparator34;
+    private javax.swing.JSeparator jSeparator35;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -1210,6 +1220,7 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea10;
     private javax.swing.JTextArea jTextArea11;
+    private javax.swing.JTextArea jTextArea12;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
@@ -1252,9 +1263,9 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JTextField txtDemanda;
     private javax.swing.JLabel txtFracMa1;
     private javax.swing.JLabel txtFracMa2;
-    private javax.swing.JLabel txtInfoBas;
     private javax.swing.JLabel txtInfoBas1;
     private javax.swing.JLabel txtInfoBas2;
+    private javax.swing.JLabel txtInfoBas3;
     private javax.swing.JLabel txtNomBa1;
     private javax.swing.JLabel txtNomBa2;
     private javax.swing.JLabel txtValFin;

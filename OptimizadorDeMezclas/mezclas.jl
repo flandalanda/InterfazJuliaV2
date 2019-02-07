@@ -32,6 +32,11 @@ y = findfirst(formulaciones[:,3],z)
 
 product = formulaciones[y,:]
 
+#guardamos la info del producto 
+save_product = product
+save_product = DataFrame(info = save_product)
+CSV.write("producto", save_product)
+
 #encontramos las restriccciones de básicos de este producto 
 y = findfirst(restricciones[:,1],z)
 y1 = restricciones[y,6:10]
@@ -376,6 +381,41 @@ extraemos los resultados del algoritmo
 #if isnan(Z) 
  if Z== 0
     println("status infeasible")
+
+        #llenamos las tablas de resultados con NA
+        p_info = ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"] 
+        pp_info = [p_info]
+        product_info = DataFrame(informacion = pp_info) 
+        CSV.write("resultados_mezclas", product_info)
+        
+        diff_x1x2 = ["NA", "NA", "NA", "NA"]
+        diff_x1x2 = [diff_x1x2]
+        diff_x1x2 = DataFrame(informacion = diff_x1x2)
+        CSV.write("dif_formulacion_realidad", diff_x1x2)
+    
+        
+        an = ["NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA"]
+        answ = [an]
+        answer = DataFrame(informacion = answ)
+        CSV.write("basicos_optimizados", answer)
+        
+        cost_opt = "NA"
+        cost_no_opt = "NA"
+        dif_cost = "NA"
+        
+        cost_opt1 = [[cost_opt]]
+        cost_no_opt1 = [[cost_no_opt]]
+        dif_cost1 = [[dif_cost]]
+
+        cost_opt = DataFrame(cost_opt = cost_opt)
+        cost_no_opt = DataFrame(cost_no_opt = cost_no_opt)
+        dif_cost = DataFrame(dif_cost = dif_cost)
+        
+        CSV.write("costo_sin_optimizar", cost_no_opt)
+        CSV.write("costo_optimizado", cost_opt )
+        CSV.write("dif_cost_optimizado", dif_cost )
+        
+        
     
 else 
 
@@ -498,6 +538,7 @@ else
       
     #calculamos la viscosidad dinámica de los basicos sin optimizar
     vdyn_formula = Array{Any,1}(length(y3))
+    vdyn_no_opt = Array{Any,1}(1)
     nss = 0 
     if flagccs == 1
         for i=1:length(y3)
@@ -560,20 +601,24 @@ else
     println("el dinero que se ahorra con la fórmula optimizada es", dif_cost)    
     =#
     
+    cost_opt1 = [[cost_opt]]
+    cost_no_opt1 =[[cost_no_opt]] 
+    dif_cost1 = [[dif_cost]]
+    
     cost_opt = DataFrame(cost_opt = cost_opt)
     cost_no_opt = DataFrame(cost_no_opt = cost_no_opt)
     dif_cost = DataFrame(dif_cost = dif_cost)
     
-    CSV.write("costo sin optimizar", cost_no_opt)
-    CSV.write("costo optimizado", cost_opt )
-    CSV.write("dif cost optimizado", dif_cost )
+    CSV.write("costo_sin_optimizar", cost_no_opt)
+    CSV.write("costo_optimizado", cost_opt)
+    CSV.write("dif_cost_optimizado", dif_cost )
     
     
     #ahora se muestran las siguientes tablas de resultados
     fraccion = new_basics/demanda
     #answer = DataFrame( nombre = nombres_basicos, codigo = new_code, fraccion_masa = fraccion, costo_unitario_mxn_kg = new_cost, cantidad_kg = new_basics, costo_por_basico = total_cost)
     an = [nombres_basicos[1], nombres_basicos[2], new_code[1], new_code[2], fraccion[1], fraccion[2], new_cost[1], new_cost[2], new_basics[1], new_basics[2], total_cost[1], total_cost[2]]
-    answ = [an]
+    #answ = [an]
     answer = DataFrame(informacion = an)
 
     #comparamos las fracciones que estan en la hoja de formulaciones con aquellas calculadas con el algoritmo 
@@ -582,7 +627,7 @@ else
     #hacemos la tabla que compara los valores del producto 
     
     p_info = [m_prod, vdyn_no_opt , product[12] , c_prod , color_no_opt , product[13] , v_prod , volat_no_opt , product[14] , mukin_product , mukin_product , mukin_product] 
-    pp_info = [p_info]
+    #pp_info = [p_info]
     product_info = DataFrame(informacion = p_info) 
     
     #guardamos los resultados en un archivo CSV
@@ -593,8 +638,9 @@ else
     
     
     #les pido de favor muchachos si podemos poner una pestaña que muestre los siguientes valores 
-    b4 = DataFrame(basicos = b4)
-    CSV.write("basicos_intercambiables", b4)
+    #b41 = [b4]
+    b42 = DataFrame(basicos = b4)
+    CSV.write("basicos_intercambiables", b42)
     
     println(dif_cost)
 end
