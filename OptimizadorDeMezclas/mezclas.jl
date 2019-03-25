@@ -28,6 +28,10 @@ formulaciones = convert(Array{Any,2},formulaciones)
 z = parse(Int32,ARGS[1])
 z_1 = string(z)
 
+#________________________________________________________________
+#identificamos el costo a utilizar 
+costo_utilizado = "FROZEN"
+
 y = findfirst(formulaciones[:,3],z)
 
 product = formulaciones[y,:]
@@ -123,10 +127,16 @@ na = 0
 
 for i = 1:length(b4)
     nss = nss+1
+    
     #indice de costo en "inventario en planta.csv" 
     indc=findfirst(inventarios[:,2],b4[i])
+
+    if costo_utilizado == "FROZEN"
     #costo de los basicos 
     cost[nss]= inventarios[indc,4]
+    else 
+        cost[nss] = inventarios[indc,5]
+    end
     #cantidad de basicos en inventario 
     cantidad[nss] = inventarios[indc,3]
     #indice de básico en "info basicos.csv"
@@ -567,6 +577,7 @@ else
         end
         vdyn_no_opt = ((vdyn_formula[2]/vdyn_formula[1])^x1)*vdyn_formula[1]
     else
+        volat_no_opt = 0 
     end
             
     
@@ -616,15 +627,30 @@ else
     
     #ahora se muestran las siguientes tablas de resultados
     fraccion = new_basics/demanda
+    fraccion[1] = round(fraccion[1],4)
+    fraccion[2] = round(fraccion[2],4)
+    new_cost[1] = round(new_cost[1],2)
+    new_cost[2] = round(new_cost[2],2)
+    
     #answer = DataFrame( nombre = nombres_basicos, codigo = new_code, fraccion_masa = fraccion, costo_unitario_mxn_kg = new_cost, cantidad_kg = new_basics, costo_por_basico = total_cost)
     an = [nombres_basicos[1], nombres_basicos[2], new_code[1], new_code[2], fraccion[1], fraccion[2], new_cost[1], new_cost[2], new_basics[1], new_basics[2], total_cost[1], total_cost[2]]
     #answ = [an]
     answer = DataFrame(informacion = an)
 
     #comparamos las fracciones que estan en la hoja de formulaciones con aquellas calculadas con el algoritmo 
+    x1 = round(x1,4)
+    x2 = round(x2,4)
     diff_x1x2 = DataFrame(x1_formula = product[6], x1_prog = x1, x2_formula = product[9], x2_prog = x2)
     
     #hacemos la tabla que compara los valores del producto 
+    m_prod = round(m_prod,2)
+    vdyn_no_opt = round(vdyn_no_opt,2)
+    c_prod =  round(c_prod,2)
+    color_no_opt = round(color_no_opt,2)
+    v_prod = round(v_prod,2)
+    volat_no_opt = round(volat_no_opt,2)
+
+
     
     p_info = [m_prod, vdyn_no_opt , product[12] , c_prod , color_no_opt , product[13] , v_prod , volat_no_opt , product[14] , mukin_product , mukin_product , mukin_product] 
     #pp_info = [p_info]

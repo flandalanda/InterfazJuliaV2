@@ -311,7 +311,7 @@ public class Inicio extends javax.swing.JPanel {
 
         txtCodProd.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtCodProd.setForeground(new java.awt.Color(204, 204, 204));
-        txtCodProd.setText("bla bla");
+        txtCodProd.setText("NA");
         add(txtCodProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 700, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -331,28 +331,28 @@ public class Inicio extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("B1 Composición:");
+        jLabel9.setText("B1 Código:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 740, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("B1 Código:");
+        jLabel10.setText("B1 Nombre:");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 740, -1, -1));
 
         txLinea.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txLinea.setForeground(new java.awt.Color(204, 204, 204));
-        txLinea.setText("bla bla");
+        txLinea.setText("NA");
         txLinea.setName("txLinea"); // NOI18N
         add(txLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 700, -1, -1));
 
         txB1n.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB1n.setForeground(new java.awt.Color(204, 204, 204));
-        txB1n.setText("bla bla");
+        txB1n.setText("NA");
         add(txB1n, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 770, -1, -1));
 
         txB1c.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB1c.setForeground(new java.awt.Color(204, 204, 204));
-        txB1c.setText("bla bla");
+        txB1c.setText("NA");
         add(txB1c, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 770, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -372,22 +372,22 @@ public class Inicio extends javax.swing.JPanel {
 
         txB1x.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB1x.setForeground(new java.awt.Color(204, 204, 204));
-        txB1x.setText("bla bla");
+        txB1x.setText("NA");
         add(txB1x, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 840, -1, -1));
 
         txCst.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCst.setForeground(new java.awt.Color(204, 204, 204));
-        txCst.setText("bla bla");
+        txCst.setText("NA");
         add(txCst, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 910, -1, -1));
 
         txTemp.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txTemp.setForeground(new java.awt.Color(204, 204, 204));
-        txTemp.setText("bla bla");
+        txTemp.setText("NA");
         add(txTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 840, -1, -1));
 
         txCp.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCp.setForeground(new java.awt.Color(204, 204, 204));
-        txCp.setText("bla bla");
+        txCp.setText("NA");
         add(txCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 910, -1, -1));
 
         jLabel32.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -402,27 +402,27 @@ public class Inicio extends javax.swing.JPanel {
 
         jLabel34.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel34.setText("B2 Composición:");
+        jLabel34.setText("B2 Código:");
         add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 740, -1, -1));
 
         jLabel35.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel35.setText("B2 Código:");
+        jLabel35.setText("B2 Nombre:");
         add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 740, -1, -1));
 
         txGrado.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txGrado.setForeground(new java.awt.Color(204, 204, 204));
-        txGrado.setText("bla bla");
+        txGrado.setText("NA");
         add(txGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 700, -1, -1));
 
         txB2n.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB2n.setForeground(new java.awt.Color(204, 204, 204));
-        txB2n.setText("bla bla");
+        txB2n.setText("NA");
         add(txB2n, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 770, -1, -1));
 
         txB2c.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB2c.setForeground(new java.awt.Color(204, 204, 204));
-        txB2c.setText("bla bla");
+        txB2c.setText("NA");
         add(txB2c, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 770, -1, -1));
 
         jLabel39.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -442,22 +442,22 @@ public class Inicio extends javax.swing.JPanel {
 
         txB2x.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txB2x.setForeground(new java.awt.Color(204, 204, 204));
-        txB2x.setText("bla bla");
+        txB2x.setText("NA");
         add(txB2x, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 840, -1, -1));
 
         txColor.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txColor.setForeground(new java.awt.Color(204, 204, 204));
-        txColor.setText("bla bla");
+        txColor.setText("NA");
         add(txColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 910, -1, -1));
 
         txVol.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txVol.setForeground(new java.awt.Color(204, 204, 204));
-        txVol.setText("bla bla");
+        txVol.setText("NA");
         add(txVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 840, -1, -1));
 
         txCpM1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCpM1.setForeground(new java.awt.Color(204, 204, 204));
-        txCpM1.setText("bla bla");
+        txCpM1.setText("NA");
         add(txCpM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 910, -1, -1));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 650, 1310, 10));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 710, 250, -1));
@@ -486,42 +486,42 @@ public class Inicio extends javax.swing.JPanel {
 
         txBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txBa1.setForeground(new java.awt.Color(204, 204, 204));
-        txBa1.setText("bla bla");
+        txBa1.setText("NA");
         add(txBa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
 
         txBa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txBa2.setForeground(new java.awt.Color(204, 204, 204));
-        txBa2.setText("bla bla");
+        txBa2.setText("NA");
         add(txBa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 180, -1, -1));
 
         txCUBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCUBa1.setForeground(new java.awt.Color(204, 204, 204));
-        txCUBa1.setText("bla bla");
+        txCUBa1.setText("NA");
         add(txCUBa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 130, -1, -1));
 
         txCUBa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCUBa2.setForeground(new java.awt.Color(204, 204, 204));
-        txCUBa2.setText("bla bla");
+        txCUBa2.setText("NA");
         add(txCUBa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 180, -1, -1));
 
         txCanBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCanBa1.setForeground(new java.awt.Color(204, 204, 204));
-        txCanBa1.setText("bla bla");
+        txCanBa1.setText("NA");
         add(txCanBa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 130, -1, -1));
 
         txCanBa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCanBa2.setForeground(new java.awt.Color(204, 204, 204));
-        txCanBa2.setText("bla bla");
+        txCanBa2.setText("NA");
         add(txCanBa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 180, -1, -1));
 
         txCpBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCpBa1.setForeground(new java.awt.Color(204, 204, 204));
-        txCpBa1.setText("bla bla");
+        txCpBa1.setText("NA");
         add(txCpBa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 130, -1, -1));
 
         txCpBa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCpBa2.setForeground(new java.awt.Color(204, 204, 204));
-        txCpBa2.setText("bla bla");
+        txCpBa2.setText("NA");
         add(txCpBa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 180, -1, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 970, 10));
 
@@ -572,7 +572,7 @@ public class Inicio extends javax.swing.JPanel {
         jTextArea2.setForeground(new java.awt.Color(204, 204, 204));
         jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
-        jTextArea2.setText("Costo por      básico\n   (mxn)");
+        jTextArea2.setText("Costo por      básico\n   (USD)");
         jTextArea2.setWrapStyleWord(true);
         jTextArea2.setCaretColor(new java.awt.Color(36, 47, 65));
         jTextArea2.setDisabledTextColor(new java.awt.Color(36, 47, 65));
@@ -582,12 +582,12 @@ public class Inicio extends javax.swing.JPanel {
 
         txCostMez2.setFont(new java.awt.Font("Century Gothic", 2, 24)); // NOI18N
         txCostMez2.setForeground(new java.awt.Color(204, 204, 204));
-        txCostMez2.setText("bla bla");
+        txCostMez2.setText("NA");
         add(txCostMez2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, -1, -1));
 
         txtValFin.setFont(new java.awt.Font("Century Gothic", 2, 24)); // NOI18N
         txtValFin.setForeground(new java.awt.Color(204, 204, 204));
-        txtValFin.setText("bla bla");
+        txtValFin.setText("NA");
         add(txtValFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
@@ -597,7 +597,7 @@ public class Inicio extends javax.swing.JPanel {
 
         txCostMez1.setFont(new java.awt.Font("Century Gothic", 2, 24)); // NOI18N
         txCostMez1.setForeground(new java.awt.Color(204, 204, 204));
-        txCostMez1.setText("bla bla");
+        txCostMez1.setText("NA");
         add(txCostMez1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
 
         jScrollPane4.setBorder(null);
@@ -650,12 +650,12 @@ public class Inicio extends javax.swing.JPanel {
 
         txtNomBa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtNomBa1.setForeground(new java.awt.Color(204, 204, 204));
-        txtNomBa1.setText("bla bla");
+        txtNomBa1.setText("NA");
         add(txtNomBa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
 
         txtNomBa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtNomBa2.setForeground(new java.awt.Color(204, 204, 204));
-        txtNomBa2.setText("bla bla");
+        txtNomBa2.setText("NA");
         add(txtNomBa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -741,62 +741,62 @@ public class Inicio extends javax.swing.JPanel {
 
         txtViscoCin.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoCin.setText("bla bla");
+        txtViscoCin.setText("NA");
         add(txtViscoCin, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 510, -1, -1));
 
         txtViscoDin.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoDin.setText("bla bla");
+        txtViscoDin.setText("NA");
         add(txtViscoDin, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 510, -1, -1));
 
         txtColor.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor.setForeground(new java.awt.Color(204, 204, 204));
-        txtColor.setText("bla bla");
+        txtColor.setText("NA");
         add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 510, -1, -1));
 
         txtVola.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola.setForeground(new java.awt.Color(204, 204, 204));
-        txtVola.setText("bla bla");
+        txtVola.setText("NA");
         add(txtVola, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 510, -1, -1));
 
         txtViscoCin1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin1.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoCin1.setText("bla bla");
+        txtViscoCin1.setText("NA");
         add(txtViscoCin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 550, -1, -1));
 
         txtViscoDin1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin1.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoDin1.setText("bla bla");
+        txtViscoDin1.setText("NA");
         add(txtViscoDin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 550, -1, -1));
 
         txtColor1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor1.setForeground(new java.awt.Color(204, 204, 204));
-        txtColor1.setText("bla bla");
+        txtColor1.setText("NA");
         add(txtColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 550, -1, -1));
 
         txtVola1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola1.setForeground(new java.awt.Color(204, 204, 204));
-        txtVola1.setText("bla bla");
+        txtVola1.setText("NA");
         add(txtVola1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 550, -1, -1));
 
         txtViscoCin2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin2.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoCin2.setText("bla bla");
+        txtViscoCin2.setText("NA");
         add(txtViscoCin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 590, -1, -1));
 
         txtViscoDin2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoDin2.setForeground(new java.awt.Color(204, 204, 204));
-        txtViscoDin2.setText("bla bla");
+        txtViscoDin2.setText("NA");
         add(txtViscoDin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 590, -1, -1));
 
         txtColor2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtColor2.setForeground(new java.awt.Color(204, 204, 204));
-        txtColor2.setText("bla bla");
+        txtColor2.setText("NA");
         add(txtColor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 590, -1, -1));
 
         txtVola2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtVola2.setForeground(new java.awt.Color(204, 204, 204));
-        txtVola2.setText("bla bla");
+        txtVola2.setText("NA");
         add(txtVola2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 590, -1, -1));
 
         jSeparator26.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -814,7 +814,7 @@ public class Inicio extends javax.swing.JPanel {
         jTextArea7.setForeground(new java.awt.Color(204, 204, 204));
         jTextArea7.setLineWrap(true);
         jTextArea7.setRows(5);
-        jTextArea7.setText("Costo unitario\n   (mxn/kg)");
+        jTextArea7.setText("Costo unitario\n   (USD/kg)");
         jTextArea7.setWrapStyleWord(true);
         jTextArea7.setCaretColor(new java.awt.Color(36, 47, 65));
         jTextArea7.setDisabledTextColor(new java.awt.Color(36, 47, 65));
@@ -824,12 +824,12 @@ public class Inicio extends javax.swing.JPanel {
 
         txtFracMa1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtFracMa1.setForeground(new java.awt.Color(204, 204, 204));
-        txtFracMa1.setText("bla bla");
+        txtFracMa1.setText("NA");
         add(txtFracMa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 130, -1, -1));
 
         txtFracMa2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtFracMa2.setForeground(new java.awt.Color(204, 204, 204));
-        txtFracMa2.setText("bla bla");
+        txtFracMa2.setText("NA");
         add(txtFracMa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 180, -1, -1));
 
         txtViscoCin3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -905,22 +905,22 @@ public class Inicio extends javax.swing.JPanel {
 
         txtx1Form.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtx1Form.setForeground(new java.awt.Color(204, 204, 204));
-        txtx1Form.setText("bla bla");
+        txtx1Form.setText("NA");
         add(txtx1Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, -1, -1));
 
         txtx1Prog.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtx1Prog.setForeground(new java.awt.Color(204, 204, 204));
-        txtx1Prog.setText("bla bla");
+        txtx1Prog.setText("NA");
         add(txtx1Prog, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
 
         txtx2Form.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtx2Form.setForeground(new java.awt.Color(204, 204, 204));
-        txtx2Form.setText("bla bla");
+        txtx2Form.setText("NA");
         add(txtx2Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 320, -1, -1));
 
         txtx2Prog.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtx2Prog.setForeground(new java.awt.Color(204, 204, 204));
-        txtx2Prog.setText("bla bla");
+        txtx2Prog.setText("NA");
         add(txtx2Prog, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 320, -1, -1));
 
         jSeparator33.setOrientation(javax.swing.SwingConstants.VERTICAL);

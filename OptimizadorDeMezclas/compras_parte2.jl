@@ -1,22 +1,17 @@
-### demo compras v3 
-
+#compras parte 2 
 using JuMP, CouenneNL, CSV, DataFrames
 
-#- en este archivo se guardan los inputs metidos por el usuario en forma de matrices y luego se corre el
-#de optimización por producto 
-
-# primero se llaman las matrices (deben estar en formato CSV ) y se convierten a matrices 
-
+#llamamos a los inputs generales
 #se ponen los inputs ya en formato para entrar al programa 
 
 mukin = CSV.read("MUKIN.csv")
 mukin_basics = convert(Array{Float64,2},mukin)'  #
-cmax = CSV.read("CMAX.csv")
-Supper = convert(Array{Float64,2},cmax)' #
-cmin = CSV.read("CMIN.csv")
-Slower = convert(Array{Float64,2},cmin)'  #
+#cmax = CSV.read("CMAX.csv")
+#Supper = convert(Array{Float64,2},cmax)' #
+#cmin = CSV.read("CMIN.csv")
+#Slower = convert(Array{Float64,2},cmin)'  #
 precio = CSV.read("PRECIO.csv")
-Cbasic = convert(Array{Float64,2},precio)'#
+#Cbasic = convert(Array{Float64,2},precio)'#
 precio = convert(Array{Float64,2},precio)
 basicos = CSV.read("BASICO.csv")
 basicos = convert(Array{Any,2},basicos) # nombre y código 
@@ -25,8 +20,6 @@ proveedor = convert(Array{String,2},proveedor)
 proveedor11 = convert(Array{String,2},proveedor)
 transporte = CSV.read("TRANSPORTE.csv")
 Ctrans = convert(Array{Float64,2},transporte)  #
-#credito = CSV.read("CREDITO.csv")
-#credito = convert(Array{Float64,2},credito)'
 tasa = CSV.read("TASA.csv")
 tasa = convert(Array,tasa)
 tasa = tasa[1]
@@ -47,6 +40,23 @@ unidades_cantidad = convert(Array{String,2},unidades_cantidad)
 ddp = CSV.read("DDP.csv")
 ddp = convert(Array{Float64,2},ddp)'
 
+#ahora llamamos a los inputs del programa anterior 
+
+Cbasic = CSV.read("Cbasic")
+Cbasic = convert(Array{Float64,2}, Cbasic)'
+Cbasic = reshape(Cbasic, length(Cbasic))
+Supper = CSV.read("Supper")
+Supper = convert(Array{Float64,2},Supper)' 
+Supper = reshape(Supper, length(Supper))
+Slower = CSV.read("Slower")
+Slower = convert(Array{Float64,2},Slower)'
+Slower = reshape(Slower, length(Slower))
+total_inputs = CSV.read("total_inputs")
+total_inputs = convert(Array{Int8,2}, total_inputs)
+total_inputs = reshape(total_inputs,1)
+productos_permitidos = CSV.read("productos_permitidos")
+productos_permitidos = convert(Array{Int32,2}, productos_permitidos)'
+productos_permitidos = reshape(productos_permitidos, length(productos_permitidos))
 
 #despues se llaman las bases de datos requeridas 
 
@@ -62,200 +72,11 @@ formulaciones = convert(Array{Any,2},formulaciones)
 demanda = CSV.read("demanda.csv")
 demanda = convert(Array{Any,2},demanda)
 
-#_________________________________________________________________________________________
-#hacemos el respectivo cambio de unidades para que todo quede en USD/kg 
-
-#primero del precio
-    
-for i = 1:length(unidades_precio)
-
-    if unidades_precio[i] == "USD/kg"
-        
-    elseif unidades_precio[i] == "USD/GAL"
-        
-        indice_densidad = findfirst(basics[:,2],basicos[i,2])
-        densidad = basics[indice_densidad,8]
-        Cbasic[i] = Cbasic[i]/(3.78541*densidad)
-        
-    elseif unidades_precio[i] == "USD/L"
-        
-         indice_densidad = findfirst(basics[:,2],basicos[i,2])
-        densidad = basics[indice_densidad,8]
-        Cbasic[i] = Cbasic[i]/densidad
-        
-        
-    elseif unidades_precio[i] == "MXN/L"
-        indice_densidad = findfirst(basics[:,2],basicos[i,2])
-        densidad = basics[indice_densidad,8]
-        Cbasic[i] = (Cbasic[i]/densidad)*(1/fx_usd[1])
-        
-    elseif unidades_precio[i]== "MXN/GAL"
-        
-         indice_densidad = findfirst(basics[:,2],basicos[i,2])
-         densidad = basics[indice_densidad,8]
-        Cbasic[i] = Cbasic[i]*(1/fx_usd[1])*(1/3.78541)*(1/densidad)
-        
-    elseif unidades_precio[i] == "MXN/kg"
-       
-        
-        indice_densidad = findfirst(basics[:,2],basicos[i,2])
-         densidad = basics[indice_densidad,8]
-        Cbasic[i] = Cbasic[i]/fx_usd[1]
-       
-        
-    end
-end
-    
-
-#ahora lo hacemos con las cantidades minimas y máximas ofrecidas por el proveedor 
-
-for i = 1:length(unidades_cantidad)
-    
-    if unidades_cantidad[i] == "GAL"
-        
-        indice_densidad = findfirst(basics[:,2],basicos[i,2])
-        densidad = basics[indice_densidad,8]
-        Supper[i] = Supper[i]*3.78541*densidad
-        Slower[i] = Slower[i]*3.78541*densidad
-        
-    elseif unidades_cantidad[i] == "L"
-        
-        indice_densidad = findfirst(basics[:,2],basicos[i,2])
-        densidad = basics[indice_densidad,8]
-        Supper[i] = Supper[i]*densidad
-        Slower[i] = Slower[i]*densidad
-        
-    elseif unidades_cantidad[i] == "Kg"
-        
-        Supper[i] = Supper[i]
-        Slower[i] = Slower[i]
-        
-    end
-end
-
-#por ultimo, tomamos en cuenta el costo financiero 
-nss = 0
-for i = 1:length(ddp)
-    if ddp == 0 
-    else
-        Cbasic[i] = Cbasic[i]/(1+tasa[1]/365)^ddp[i]
-        end
-    end 
-
-
-
-#___________________________________________________________________________________________-
-#indicamos que oferta sería escogida sin tener el algoritmo 
-
-
+#indica el usuario cuantos productos quiere analizar 
+#este será un input del GUI muchachos 
 println("indique que oferta escogería normalmente: ")
 oferta_escogida = parse(Int32,readline(STDIN))
 
-
-#____________________________________________________________________________________________
-
-#se identifica cuantas ofertas de básicos metió el usuario 
-total_inputs = length(basicos[:,1])
-
-#ahora hay que identificar que productos pueden ser mezclados utilizando estos básicos
-
-# 
-
-
-productos_permitidos = Array{Any,1}(length(formulaciones[:,1]))
-posible = Array{Int8,1}(length(basicos[:,1]))
-contador = 0 
-
-for i = 1:length(formulaciones[:,1])
-    
-    contador = contador + 1 
-    
-    z = formulaciones[i,3]
-    z1 = string(z)
-  
-
-    #encontramos las restriccciones de básicos de este producto 
-    y = findfirst(restricciones[:,1],z)
-    y1 = restricciones[y,6:10]
-
-    lg = length(grupos[:,1]) #nos indica cuantos basicos se pueden utilizar de acuerdo a las restricciones
-
-    g = Array{Any,2}(lg,5) #se indica 5 porque es la cantidad de grupos posibles en el caso de haber mas o menos este numero debe cambiar
-
-    #obtenemos los básicos especificados en la formulación 
-    y2 = restricciones[y,2:5]
-    fun(y2) = y2 == 0
-    zero_elements = find(fun,y2)
-    y3 = deleteat!(y2,zero_elements)
-
-    #obtenemos todos los básicos permitidos para hacer este producto 
-    nss = 0 
-    for j = 1:5
-        nss = nss+1
-         if y1[j]==1 
-            g[:,nss]=grupos[:,2*j]
-        else 
-            g[:,nss]= zeros(Int8,lg,1)
-        end 
-    end 
-    
-    #find the zero elements in the arrays and delete them 
-    basico = Array{Any,1}(5)
-    ns = 0
-    for j = 1:5
-        ns = ns+1
-        x = g[:,j]
-        fun(x) = x == 0
-        zero_elements = find(fun,x)
-        new_vector = deleteat!(g[:,j],zero_elements)
-        basico[ns] = new_vector
-    end
-
-    #construimos un vector con todos los básicos permitidos para formar este producto
-    b1 = append!(basico[1],basico[2])
-    b2 = append!(b1,basico[3])
-    b3 = append!(b2,basico[4])
-    b4 = append!(b3,basico[5])
-    
-
-    #ahora vemos si los basicos ofrecidos por los proveedores estan dentro de los basicos permitido en el producto
-    nss = 0  
-
-    
-    for j = 1:length(basicos[:,1])
-            bas = basicos[j,2]
-            se_puede = findfirst(b4,bas)
-        
-         if se_puede == 0
-            nss = nss + 1 
-            posible[nss] = 0 
-         else 
-            nss = nss + 1 
-            posible[nss] = 1 
-         end
-    end 
-
-    if sum(posible) == total_inputs 
-      
-        productos_permitidos[contador]=z
-    else
-       
-        productos_permitidos[contador]=0
-    end
-
-end
-
-#find zero elements in product array and delete them 
-
-x = productos_permitidos 
-fun(x) = x == 0
-zero_elements = find(fun,x)
-productos_permitidos = deleteat!(productos_permitidos,zero_elements)
-
-#ya obtuvimos todos los productos que pueden ser mezclados usando los básicos que son ofrecidos
-#_____________________________________________________________________________
-#indica el usuario cuantos productos quiere analizar 
-#este será un input del GUI muchachos 
 print("el total de los productos que se pueden mezclar con las ofertas son  ", length(productos_permitidos))
 println("  indique cuantos productos desea analizar")
 p_analizados = parse(Int32,readline(STDIN))
@@ -434,6 +255,7 @@ else
     new_proveedorx1 = Array{Any,1}(p_analizados)
     new_proveedorx2 = Array{Any,1}(p_analizados)
     ahorro_ponderado = Array{Any,1}(p_analizados)
+    ######################3
     dif_cost = Array{Any,1}(p_analizados)
     volat_nonopt = Array{Any,1}(p_analizados)
     color_nonopt = Array{Any,1}(p_analizados)
@@ -454,6 +276,7 @@ else
     nonopt_volat_B1 =Array{Any,1}(p_analizados)
     nonopt_color_B1 = Array{Any,1}(p_analizados)
     nonopt_viscdyn_B1 = Array{Any,1}(p_analizados)
+            
     nonopt_B2 = Array{Any,1}(p_analizados)
     nonopt_visc_B2 = Array{Any,1}(p_analizados)
     nonopt_cost_B2 = Array{Any,1}(p_analizados)
@@ -478,6 +301,7 @@ else
         indice = findfirst(formulaciones[:,3], producto_codigo)
         product = formulaciones[indice,:]
         
+     
         #=_______________________________________________________________________________________
         calculamos cuanto hubiera costado el producto si no se usara el algoritmo 
         =#
@@ -497,7 +321,7 @@ else
         cost_B1 = basics_1[indice_B1,15]
         cost_B2 = basics_1[indice_B2,15]
 
-
+  
         #identificamos la propiedades del básico escogido por el usuario
         B_usercode = basicos[oferta_escogida,2]
         B_user_indice = findfirst(basics_1[:,2],B_usercode)
@@ -1076,13 +900,13 @@ else
 
     #obtenemos los resultados desglosados de los básicos escogidos por el algoritmo 
     resultados0 = DataFrame(code_x1 = new_codex1, code_x2 = new_codex2, cost_x1 = new_costx1, cost_x2 = new_costx2, cant_x1 = new_basicsx1, cant_x2 = new_basicsx2, proveedor_x1 = new_proveedorx1, proveedor_x2 = new_proveedorx2, visckin_x1 = new_visckinx1, visckin_x2 = new_visckinx2, mukin = mukin_form)    
-    
+    CSV.write("resultados0", resultados0)
     #resultados de propiedades de producto : alg optim, formula, alg nonopt
     resultados1 = DataFrame(mukin = mukin_form, mudyn_formula = mudyn_form, mudyn_opt = mudyn_opt, mudyn_nonopt = vdyn_nonopt, color_formula = col_form, color_optim = col_opt, color_nonopt = color_nonopt, volat_formula = vol_form, volat_optim = vol_opt, volat_nonopt = volat_nonopt)
-    
+    CSV.write("resultados1", resultados1)
     #resultados de dinero 
     resultados2 = DataFrame(proveedor = new_proveedorx1, cantidad = new_basicsx1, costo_optim = Z_optim1, cost_nonopt = cost_nonopt1, ahorro = ahorro_, cost_financiero = new_costfin, demanda = demanda_)
-     
+    CSV.write("resultados2", resultados2) 
     resultados3 = DataFrame(codex1_nonopt = nonopt_B1, codex2_nonopt = nonopt_B2, nonopt_viscx1 = nonopt_visc_B1, nonopt_viscx2 = nonopt_visc_B2, nonopt_costx1 = nonopt_cost_B1, nonopt_costx2 = nonopt_cost_B2, nonopt_volatx1 = nonopt_volat_B1 , nonopt_volatx2 = nonopt_volat_B2  ) 
 end
 
@@ -1136,12 +960,37 @@ ns = 0
     end
 
     #visión general
+       
     demanda_total_an = sum(resultados2[:,7])
-    demanda_total = sum(demanda[:,2])
-    per_demanda = (demanda_total_an/demanda_total)*100
+    demanda_total_an1 = sum(resultados2[:,7])
+    demanda_total_an = [demanda_total_an]
+    demanda_total_an = DataFrame(info = demanda_total_an)
+    CSV.write("demanda total analizada", demanda_total_an)
     
+    demanda_total = sum(demanda[:,2])
+    demanda_total1 = sum(demanda[:,2])
+    demanda_total = [demanda_total]
+    demanda_total = DataFrame(info = demanda_total)
+    CSV.write("demanda total ", demanda_total)
+
+    per_demanda = (demanda_total_an1/demanda_total1)*100
+
+    per_demanda = [per_demanda]
+    per_demanda = DataFrame(info = per_demanda)
+    CSV.write("porcentaje de demanda", per_demanda)
+
     total_productos = length(demanda[:,2])
-    per_productos = (p_analizados/total_productos)*100
+    total_productos1 = length(demanda[:,2])
+    total_productos = [total_productos]
+    total_productos = DataFrame(info = total_productos)
+    CSV.write("total de productos", total_productos)
+
+    per_productos = (p_analizados/total_productos1)*100
+    per_productos = [per_productos]
+    per_productos = DataFrame(info = per_productos)
+    CSV.write("porcentaje de productos", per_productos)
+    
+
     
     #analisis por proveedor 
     
@@ -1168,7 +1017,7 @@ ns = 0
         else
             prod_prov[ns] = length(prov[1])
             dem_tot[ns] = sum(prov[7])
-            per_dem[ns] = dem_tot[ns]/demanda_total_an
+            per_dem[ns] = dem_tot[ns]/demanda_total_an1
             cost_fin[ns] = sum(prov[6])
             cant[ns] = sum(prov[2])        
             prov5 = prov[5]
@@ -1192,4 +1041,22 @@ end
 answer = DataFrame(producto = prod_prov, demanda = dem_tot, per_demanda = per_dem, cost_fin = cost_fin, cantidad = cant, ahorro = aho)
     
 #___________________________________________________________________________________________________________END    
-    
+
+#en vista de que julia es tonto, vamos a guardar cada uno de los incisos del resultado en un CSV diferente
+#Todos los archivos serán arreglos del mismo tamaño
+
+prod_prov = DataFrame(info = prod_prov)
+dem_tot = DataFrame(info = dem_tot)
+per_dem = DataFrame(info = per_dem)
+cost_fin = DataFrame(info = cost_fin)
+cant = DataFrame(info = cant)
+aho = DataFrame(info = aho)
+
+CSV.write("proveedor", prod_prov)
+CSV.write("demanda total", dem_tot)
+CSV.write("porcentaje demanda", per_dem)
+CSV.write("costo financiero", cost_fin)
+CSV.write("cantidad kg", cant)
+CSV.write("ahorro", aho)
+
+
