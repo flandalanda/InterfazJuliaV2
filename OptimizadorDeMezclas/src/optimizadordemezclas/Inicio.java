@@ -129,6 +129,7 @@ public class Inicio extends javax.swing.JPanel {
         txAviso = new javax.swing.JLabel();
         lbDemanda = new javax.swing.JLabel();
         txtDemanda = new javax.swing.JTextField();
+        rbFroz = new javax.swing.JRadioButton();
         txtCodProd = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -280,7 +281,7 @@ public class Inicio extends javax.swing.JPanel {
                 btnCalculaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCalcula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
+        jPanel1.add(btnCalcula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
 
         txCpM.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCpM.setForeground(new java.awt.Color(204, 204, 204));
@@ -300,12 +301,17 @@ public class Inicio extends javax.swing.JPanel {
                 txAvisoComponentShown(evt);
             }
         });
-        jPanel1.add(txAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 80, 20));
+        jPanel1.add(txAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 80, 20));
 
         lbDemanda.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         lbDemanda.setText("Ingrese la demanda");
         jPanel1.add(lbDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
         jPanel1.add(txtDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 100, -1));
+
+        rbFroz.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        rbFroz.setText("Precio Frozen");
+        rbFroz.setOpaque(false);
+        jPanel1.add(rbFroz, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 980));
 
@@ -1064,11 +1070,17 @@ public class Inicio extends javax.swing.JPanel {
 
     private void txAvisoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txAvisoComponentShown
         // TODO add your handling code here:
+        String froz = "";
+        
         System.out.println(combo.getSelectedItem());
+        if(rbFroz.isSelected()){
+            froz = "FROZEN";
+        }
+        
         try{ 
             Runtime rt = Runtime.getRuntime();
             System.out.println(path);
-            Process pr = rt.exec("julia mezclas.jl "+combo.getSelectedItem() + " " +txtDemanda.getText());
+            Process pr = rt.exec("julia mezclas.jl "+combo.getSelectedItem() + " " +txtDemanda.getText() + " " + froz);
                 
                InputStream is = pr.getInputStream();
                String line;
@@ -1248,6 +1260,7 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea8;
     private javax.swing.JTextArea jTextArea9;
     private javax.swing.JLabel lbDemanda;
+    private javax.swing.JRadioButton rbFroz;
     private javax.swing.JLabel txAviso;
     private javax.swing.JLabel txB1c;
     private javax.swing.JLabel txB1n;
