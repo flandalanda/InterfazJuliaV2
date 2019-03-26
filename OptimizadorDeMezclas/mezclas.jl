@@ -30,7 +30,7 @@ z_1 = string(z)
 
 #________________________________________________________________
 #identificamos el costo a utilizar 
-costo_utilizado = "FROZEN"
+costo_utilizado = ARGS[3]
 
 y = findfirst(formulaciones[:,3],z)
 
@@ -133,8 +133,10 @@ for i = 1:length(b4)
 
     if costo_utilizado == "FROZEN"
     #costo de los basicos 
+    println("costo utilizado FROZEN")
     cost[nss]= inventarios[indc,4]
     else 
+        println("costo utilizado otro")
         cost[nss] = inventarios[indc,5]
     end
     #cantidad de basicos en inventario 
@@ -387,7 +389,7 @@ Z = getobjectivevalue(m);
 
 extraemos los resultados del algoritmo 
  =#
-
+println(Z)
 #if isnan(Z) 
  if Z== 0
     println("status infeasible")
@@ -483,12 +485,13 @@ else
     new_cost = copy(cost)
     new_code = copy(b4)
 
+    
     new_basics = round.((deleteat!(new_basics,zero_elements))*1e5); 
     new_cost = deleteat!(new_cost,zero_elements); 
-    new_code = deleteat!(new_code,zero_elements);  
-
+    new_code = deleteat!(new_code,zero_elements); 
+    
     total_cost = round.(new_cost.*new_basics)
-        
+      
 
     #=obtenemos la información de la formulación sin cambios 
    _________________________________________________________________________________________________________________________
@@ -503,18 +506,27 @@ else
     for i = 1:length(y3)
         nss = nss + 1 
         indice = findfirst(inventarios[:,2],y3[i])
-        costo[nss] = inventarios[indice,4]
+
+        if costo_utilizado == "FROZEN"
+            
+            costo[nss]= inventarios[indice,4]
+            else 
+                
+                costo[nss] = inventarios[indice,5]
+        end
+        
         index = findfirst(basicos[:,2],y3[i])
         mukin_formula[nss] = basicos[index,3]
         mukin_formula40[nss] = basicos[index,4]
     end 
-  
+   
+    
     #obtenemos las fracciones masa de los básicos no optimizados para cumplir con la restricción de visc 100°C 
 
     visc_prod = product[10]
     x2 = (log(visc_prod)/log(mukin_formula[2]))/(log(mukin_formula[1])/log(mukin_formula[2]))
     x1 = 1-x2
-
+    
     basicosf = [x1, x2]
 
     cost_no_opt = costo[1]*x1*demanda[1] + costo[2]*x2*demanda[1]
@@ -524,6 +536,8 @@ else
     nss = 0 
     volat_formula = Array{Any,1}(length(y3))
     color_formula = Array{Any,1}(length(y3))
+
+    
    if flagcolor == 1
     for i= 1:length(y3)
         nss = nss + 1 
@@ -545,7 +559,7 @@ else
     else
         volat_no_opt = 0 
     end
-      
+    
     #calculamos la viscosidad dinámica de los basicos sin optimizar
     vdyn_formula = Array{Any,1}(length(y3))
     vdyn_no_opt = Array{Any,1}(1)
@@ -577,13 +591,13 @@ else
         end
         vdyn_no_opt = ((vdyn_formula[2]/vdyn_formula[1])^x1)*vdyn_formula[1]
     else
-        volat_no_opt = 0 
+        vdyn_no_opt = 0 
     end
             
-    
+   
     mukin_no_opt = ((mukin_formula40[2]/mukin_formula40[1])^x1)*mukin_formula40[1]
 
-    println("CHECK")
+   
     
 #_______________________________________________________________________________________________
 
@@ -596,16 +610,17 @@ else
         nombres_basicos[nss] = basicos[indice,1]
    
     end 
-
+   
+  
 
     #=___________________________________________________________________________________________-
     despliegue de resultados 
     
     muchachos, voy a guardarles todo en archivos CSV 
     =#
-    cost_opt = round(Z*1e5)
+    cost_opt = round.(Z*1e5)
     dif_cost = cost_no_opt - cost_opt
-
+    
     #=muchachos, estas son las lineas que quiero esten escritas en el GUI, ligadas a los valores correspondientes 
     println("el costo total de la mezcla de basicos sin optimizar la formulacion es ", cost_no_opt, " pesos")
     println("el costo total de mezcla de basicos con la formulación optimizada es ", cost_opt, " pesos" )    
@@ -627,30 +642,34 @@ else
     
     #ahora se muestran las siguientes tablas de resultados
     fraccion = new_basics/demanda
-    fraccion[1] = round(fraccion[1],4)
-    fraccion[2] = round(fraccion[2],4)
-    new_cost[1] = round(new_cost[1],2)
-    new_cost[2] = round(new_cost[2],2)
+    
+    
+    fraccion[1] = round.(fraccion[1],4)
+    fraccion[2] = round.(fraccion[2],4)
+    new_cost[1] = round.(new_cost[1],2)
+    new_cost[2] = round.(new_cost[2],2)
     
     #answer = DataFrame( nombre = nombres_basicos, codigo = new_code, fraccion_masa = fraccion, costo_unitario_mxn_kg = new_cost, cantidad_kg = new_basics, costo_por_basico = total_cost)
     an = [nombres_basicos[1], nombres_basicos[2], new_code[1], new_code[2], fraccion[1], fraccion[2], new_cost[1], new_cost[2], new_basics[1], new_basics[2], total_cost[1], total_cost[2]]
     #answ = [an]
     answer = DataFrame(informacion = an)
-
+    
     #comparamos las fracciones que estan en la hoja de formulaciones con aquellas calculadas con el algoritmo 
-    x1 = round(x1,4)
-    x2 = round(x2,4)
+    x1 = round.(x1,4)
+    x2 = round.(x2,4)
     diff_x1x2 = DataFrame(x1_formula = product[6], x1_prog = x1, x2_formula = product[9], x2_prog = x2)
     
     #hacemos la tabla que compara los valores del producto 
-    m_prod = round(m_prod,2)
-    vdyn_no_opt = round(vdyn_no_opt,2)
-    c_prod =  round(c_prod,2)
-    color_no_opt = round(color_no_opt,2)
-    v_prod = round(v_prod,2)
-    volat_no_opt = round(volat_no_opt,2)
+    m_prod = round.(m_prod,2)
+    
+    vdyn_no_opt = round.(vdyn_no_opt,2)
+    
+    c_prod =  round.(c_prod,2)
+    color_no_opt = round.(color_no_opt,2)
+    v_prod = round.(v_prod,2)
+    volat_no_opt = round.(volat_no_opt,2)
 
-
+    
     
     p_info = [m_prod, vdyn_no_opt , product[12] , c_prod , color_no_opt , product[13] , v_prod , volat_no_opt , product[14] , mukin_product , mukin_product , mukin_product] 
     #pp_info = [p_info]

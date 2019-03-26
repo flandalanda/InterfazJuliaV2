@@ -1070,7 +1070,7 @@ public class Inicio extends javax.swing.JPanel {
 
     private void txAvisoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txAvisoComponentShown
         // TODO add your handling code here:
-        String froz = "";
+        String froz = "placeholder";
         
         System.out.println(combo.getSelectedItem());
         if(rbFroz.isSelected()){
