@@ -285,8 +285,8 @@ public class Inicio extends javax.swing.JPanel {
 
         txCpM.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txCpM.setForeground(new java.awt.Color(204, 204, 204));
-        txCpM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/optimizadordemezclas/logo.png"))); // NOI18N
-        jPanel1.add(txCpM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, -1, -1));
+        txCpM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/optimizadordemezclas/Logo.png"))); // NOI18N
+        jPanel1.add(txCpM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, -1, -1));
 
         combo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -308,7 +308,6 @@ public class Inicio extends javax.swing.JPanel {
         jPanel1.add(lbDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
         jPanel1.add(txtDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 100, -1));
 
-        rbFroz.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         rbFroz.setText("Precio Frozen");
         rbFroz.setOpaque(false);
         jPanel1.add(rbFroz, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
@@ -644,7 +643,7 @@ public class Inicio extends javax.swing.JPanel {
         jTextArea3.setDisabledTextColor(new java.awt.Color(36, 47, 65));
         jScrollPane3.setViewportView(jTextArea3);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 670, 170, 70));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 670, 160, 70));
 
         jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 400, 10, 80));
@@ -743,7 +742,7 @@ public class Inicio extends javax.swing.JPanel {
         add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 10, 80));
 
         jSeparator25.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 650, 10, 330));
+        add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 650, 10, 330));
 
         txtViscoCin.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtViscoCin.setForeground(new java.awt.Color(204, 204, 204));
@@ -979,9 +978,8 @@ public class Inicio extends javax.swing.JPanel {
         jSeparator35.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 400, 10, 80));
 
-        combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         combo1.setName(""); // NOI18N
-        add(combo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 760, -1, -1));
+        add(combo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 760, -1, -1));
 
         txtInfoBas3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         txtInfoBas3.setForeground(new java.awt.Color(204, 204, 204));

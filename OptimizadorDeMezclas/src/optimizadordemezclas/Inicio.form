@@ -81,12 +81,12 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/optimizadordemezclas/logo.png"/>
+              <Image iconType="3" name="/optimizadordemezclas/Logo.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="550" width="-1" height="-1"/>
+              <AbsoluteConstraints x="30" y="550" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -143,9 +143,6 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbFroz">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="16" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Precio Frozen"/>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
@@ -1139,7 +1136,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1440" y="670" width="170" height="70"/>
+          <AbsoluteConstraints x="1480" y="670" width="160" height="70"/>
         </Constraint>
       </Constraints>
 
@@ -1480,7 +1477,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1410" y="650" width="10" height="330"/>
+          <AbsoluteConstraints x="1470" y="650" width="10" height="330"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -2175,12 +2172,7 @@
     <Component class="javax.swing.JComboBox" name="combo1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
@@ -2189,7 +2181,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1480" y="760" width="-1" height="-1"/>
+          <AbsoluteConstraints x="1530" y="760" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
